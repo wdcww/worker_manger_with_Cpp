@@ -26,7 +26,7 @@ menu::~menu() //menu 类的析构函数
     }
 }
 void menu::find() 
-{ //查
+{ //查询此时内存中的数据
     int i;
   cout<<"内存中有"<<this->m_Empnum<<"个人"<<endl;
   for(i=0;i<this->m_Empnum;i++)
@@ -37,7 +37,7 @@ void menu::find()
 
 }
 void menu::change() 
-{ //改
+{ //修改此时内存中的数据
   cout<<"请输入你要修改职工的编号";
   int id;
   cin>>id;
@@ -78,7 +78,7 @@ void menu::change()
 
 }
 void menu::add() 
-{ //添
+{ //添加数据到当前的内存中
   cout<<"请输入添加的人数:"<<endl;
 
   int addnum;
@@ -131,7 +131,7 @@ void menu::add()
     return;
 }
 void menu::del() 
-{ //删
+{ //删除此时内存中的数据
   cout<<"输入要删的职工的编号";
   int del_id;
   cin>>del_id;
@@ -161,12 +161,10 @@ void menu::del()
     this->m_Empnum--;
 }
 void menu::load() 
-{ //读取文件,这里的实现逻辑和add()类似,也是会把看过的所有的文件里的信息添加到
-//内存里面
+{ //读取文件,这里的实现逻辑和add()类似,把看过的所有的文件里的信息添加到内存里面
     string path;  
 cout << "你要打开文件路径：";  
 cin >> path;  
-    cout<<"pppp"<<endl;
     ifstream ifs;
     ifs.open(path,ios::in);
     if(ifs.fail())
@@ -255,7 +253,7 @@ if(this->m_EmpArrary!=NULL)
 
 }
 void menu::save() 
-{ //保存文件
+{ //保存内存数据到指定的文件
   string path;
   cout<<"输入保存路径";
   cin>>path;
@@ -275,7 +273,7 @@ ofs.open(path,ios::out);
 }
 void menu::sort()
 {
-  cout<<"此功能是,按照编号从小到大进行排序"<<endl;
+  cout<<"此功能是,把内存中的数据 按照编号从小到大进行排序"<<endl;
   for(int i=0;i<this->m_Empnum-1;i++)
     for(int j=0;j<this->m_Empnum-i-1;j++)
       if(this->m_EmpArrary[j]->m_id > this->m_EmpArrary[j+1]->m_id)
