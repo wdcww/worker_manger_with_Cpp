@@ -32,9 +32,7 @@ class Manger : public Worker
 {
 public:
    Manger(int id,string name,int deptid);
-
    virtual void showinfo(); 
-   
    virtual string getdeptname();
 };
 
@@ -44,9 +42,7 @@ class Boss : public Worker
 {
 public:
    Boss(int id,string name,int deptid);
-
    virtual void showinfo(); 
-   
    virtual string getdeptname();
 };
 
@@ -66,9 +62,9 @@ class menu
    void save();
    void sort();
    
-   int m_Empnum; //记录文件中的人数个数
+   int m_Empnum; //记录内存中的人数个数
 
-   Worker* * m_EmpArrary; //维护,存放着开辟员工返回来的地址的数组 
+   Worker* * m_EmpArrary;  
 
 
 };
