@@ -1,8 +1,9 @@
 #include<iostream>
+#include <Windows.h>
+
 using namespace std;
 
-#include"all_class.h"
-//已经在tasks.json里面改过了,当前文件和all_class.cpp一起编译
+#include"all_class.h" //这个头文件中没有写using namespace std;，所以这行放在这里
 
 void showUI()
 { 
@@ -115,7 +116,10 @@ void test()
 
 
 int main()
-{
+{   
+    //强制控制台使用 UTF-8 输出
+    SetConsoleOutputCP(CP_UTF8);
+    
     test();
     //从这里出来应该~menu()
 
